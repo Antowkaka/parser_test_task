@@ -18,9 +18,9 @@
 //    echo 'Статья по ссылке: ' . '<a href="' . $item_rss->link . '">' . $link . '</a>';
 //    echo '<hr>';
 //}
-function checkRepeater($post_title) {
-    $query = "SELECT (*) FROM 'content' WHERE "
-}
+//function checkRepeater($post_title) {
+//    $query = "SELECT (*) FROM 'content' WHERE "
+//}
 
 
 $rss = simplexml_load_file('http://www.ixbt.com/export/news.rss');
@@ -33,7 +33,14 @@ foreach ($rss->channel->item as $item) {
     $description = $item->description;
     $regexp = "/<br><br>\n\t\t<a href=\".{1,}\">Комментировать<\/a>\n\t\t<br><br>/" ;
     $description = preg_replace($regexp,'', $description);
-
     echo "<article><h2>". $title. "</h2><p>". $description . "</p></article>";
-    echo "";
+}
+
+function sendEmail(){
+    $send = mail (
+        $_POST['user_email'],
+        'Статья на News Parser',
+        'Опубликована новая статья на сайте News Parser.',
+        "Content-type:text/plain; charset = utf-8\r\nFrom:<NewsParser.com>"
+    );
 }
