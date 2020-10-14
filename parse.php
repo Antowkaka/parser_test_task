@@ -18,11 +18,17 @@
 //    echo 'Статья по ссылке: ' . '<a href="' . $item_rss->link . '">' . $link . '</a>';
 //    echo '<hr>';
 //}
+function checkRepeater($post_title) {
+    $query = "SELECT (*) FROM 'content' WHERE "
+}
+
 
 $rss = simplexml_load_file('http://www.ixbt.com/export/news.rss');
 
 
 foreach ($rss->channel->item as $item) {
+
+    $post_to_db_query = "INSERT INTO 'content' ('post_title', 'post_content', 'post_image', 'post_category') VALUES ('$item->title', '$item->description')";
     $title = $item->title;
     $description = $item->description;
     $regexp = "/<br><br>\n\t\t<a href=\".{1,}\">Комментировать<\/a>\n\t\t<br><br>/" ;
