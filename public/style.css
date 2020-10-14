@@ -1,0 +1,54 @@
+nav li{
+    list-style-type: none;
+}
+
+img{
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    max-width: 200px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #efefef;
+}
+
+article{
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 5px;
+}
+
+.home-link{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 28px ;
+}
+
+.header-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header{
+    background-color: #c1bcbc;
+    padding: 10px 0;
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    h2{
+        font-size: 1.6rem;
+    }
+}
