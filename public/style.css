@@ -52,3 +52,10 @@ figure{
         font-size: 1.6rem;
     }
 }
+
+footer{
+    padding: 60px 0;
+    text-align: center;
+    background-color: #6b6868;
+    color: #ffffff;
+}
